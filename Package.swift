@@ -14,13 +14,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+swift-tools-version:5.1
+
 import PackageDescription
 
 let package = Package(
     name: "APNS",
-    targets: [],
+    targets: [
+    .library(
+        name: "APNS",
+        targetes: ["APNS"]),
+    ],
     dependencies: [
-        .Package(url: "https://github.com/alexeyxo/protobuf-swift.git",
+        .Package(url: "https://github.com/pdistler/protobuf-swift.git",
                  majorVersion: 3),
-        ]
+    ],
+    .targets: [
+    .target(
+        name: "APNS",
+    dependencies: []
+    ),
+    ]
 )
